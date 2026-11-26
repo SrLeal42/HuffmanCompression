@@ -1,0 +1,16 @@
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+/huffcompressor
+
+*.test
+*.out
+
+# Saídas e temporários gerados pelo compressor
+*.huff
+*.tmp
+
+.DS_Store
+Thumbs.db
