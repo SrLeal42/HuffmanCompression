@@ -12,13 +12,13 @@
 ## Fase 1 — Estruturas Fundamentais do Núcleo (`internal/huffman`)
 **Objetivo:** Implementar e provar matematicamente a construção da árvore e geração de códigos sem dependência de I/O de formato ou GUI.
 
-- [ ] **1.1 Frequências e Entropia** (`freq.go`, `entropy.go`, `freq_test.go`)
+- [x] **1.1 Frequências e Entropia** (`freq.go`, `entropy.go`, `freq_test.go`)
   - Contagem via `io.Reader` + `bufio.Reader` em `[256]uint64` (sem `map`), computando `OriginalSize` e `CRC32` (IEEE) na mesma passagem.
   - Cálculo da Entropia de Shannon (`H`) e tamanho teórico mínimo (`H * size / 8`).
-- [ ] **1.2 Min Heap Determinístico** (`heap.go`, `heap_test.go`)
+- [x] **1.2 Min Heap Determinístico** (`heap.go`, `heap_test.go`)
   - Min Heap escrito do zero ordenando por `(freq, seq)`.
   - Testes unitários garantindo ordem estrita e desempate determinístico por `seq`.
-- [ ] **1.3 Árvore de Huffman e Gerador de Códigos** (`tree.go`, `codes.go`, `tree_test.go`)
+- [x] **1.3 Árvore de Huffman e Gerador de Códigos** (`tree.go`, `codes.go`, `tree_test.go`)
   - Construção da árvore inserindo folhas em ordem crescente de byte (`0..255`) com `seq` monotônico; 1º pop -> esquerda (`0`), 2º pop -> direita (`1`).
   - Estrutura `Code` com suporte a comprimentos `> 64` bits (slice de bytes MSB-first) + *fast path* em `uint64` para `<= 64` bits.
   - Casos especiais: 0 símbolos e 1 símbolo único (código de 0 bits).
